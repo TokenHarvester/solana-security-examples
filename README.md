@@ -54,7 +54,7 @@ solana-security-examples/
 
 ```bash
 # Clone the repository
-git clone https://github.com/SuperteamNG/solana-security-examples
+git clone https://github.com/TokenHarvester/solana-security-examples.git
 cd solana-security-examples
 
 # Install dependencies
