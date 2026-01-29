@@ -1,0 +1,25 @@
+[package]
+name = "vulnerable-signer"
+version = "0.1.0"
+description = "Vulnerable implementation demonstrating missing signer check"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "vulnerable_signer"
+path = "lib.rs"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.30.1"
+
+[dev-dependencies]
+solana-program-test = "1.18"
+solana-sdk = "1.18"
+tokio = { version = "1", features = ["full"] }

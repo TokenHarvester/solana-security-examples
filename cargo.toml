@@ -1,0 +1,32 @@
+[workspace]
+resolver = "2"
+members = [
+    "examples/01-missing-signer-check/vulnerable",
+    "examples/01-missing-signer-check/secure",
+    "examples/02-missing-owner-check/vulnerable",
+    "examples/02-missing-owner-check/secure",
+]
+
+# Examples 3-7 have complete code in examples/CONSOLIDATED_EXAMPLES.md
+# To use them, copy the code into individual directories and add them here
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/TokenHarvester/solana-security-examples.git"
+
+[workspace.dependencies]
+anchor-lang = "0.30.1"
+anchor-spl = "0.30.1"
+solana-program = "1.18"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1
